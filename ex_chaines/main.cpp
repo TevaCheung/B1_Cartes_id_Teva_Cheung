@@ -13,6 +13,7 @@ int main(){
 	char termine = 'n';
 	carte_id tab[TAILLE];
 	char texte[TXT];
+	char &reftab = texte[TXT];
 	int entier;
 
 	cout << "--- Programme cartes d'indentite ---" << endl;
@@ -59,17 +60,17 @@ int main(){
 
 				cout << "Entrez un prenom : ";
 				cin >> texte;
-				tab[i].set_prenom(texte);
+				tab[i].set_prenom(reftab);
 				cout << endl;
 
 				cout << "Entrez un nom : ";
 				cin >> texte;
-				tab[i].set_nom(texte);
+				tab[i].set_nom(reftab);
 				cout << endl;
 
 				cout << "Entrez l'adresse: ";
 				cin >> texte;
-				tab[i].set_adresse(texte);
+				tab[i].set_adresse(reftab);
 				cout << endl;
 
 				cout << "Entrez le code postal: ";
@@ -79,11 +80,11 @@ int main(){
 
 				cout << "Entrez la ville :";
 				cin >> texte;
-				tab[i].set_ville(texte);
+				tab[i].set_ville(reftab);
 				cout << endl;
 
 				cout << "Carte ajoutee" << endl;
-				tab->ajouter_carte(tab->nb_cartes);
+				//tab->ajouter_carte(tab->nb_cartes);
 				
 			}
 		}else if (choix == 3) {
@@ -114,17 +115,17 @@ int main(){
 
 				cout << "Entrez un prenom : ";
 				cin >> texte;
-				tab[i-1].set_prenom(texte);
+				tab[i-1].set_prenom(reftab);
 				cout << endl;
 
 				cout << "Entrez un nom : ";
 				cin >> texte;
-				tab[i-1].set_nom(texte);
+				tab[i-1].set_nom(reftab);
 				cout << endl;
 
 				cout << "Entrez l'adresse: ";
 				cin >> texte;
-				tab[i-1].set_adresse(texte);
+				tab[i-1].set_adresse(reftab);
 				cout << endl;
 
 				cout << "Entrez le code postal: ";
@@ -134,7 +135,7 @@ int main(){
 
 				cout << "Entrez la ville :";
 				cin >> texte;
-				tab[i-1].set_ville(texte);
+				tab[i-1].set_ville(reftab);
 				cout << endl;
 
 				cout << "Carte modifiee" << endl;
@@ -150,6 +151,7 @@ int main(){
 				else {
 					vide++;
 				}
+			}
 
 			if (vide == TAILLE) {
 				cout << "Pas de cartes a supprimer";
@@ -158,11 +160,11 @@ int main(){
 				do {
 					cout << "Supprimer quelle carte ?";
 					cin >> i;
-				} while (tab[i-1].get_id() < 0);
+				} while (tab[i - 1].get_id() < 0);
 
-				tab[i-1].set_id(-1);
+				tab[i - 1].set_id(-1);
 				cout << "carte supprimee" << endl;
-				tab->retirer_carte(tab->nb_cartes);
+				//tab->retirer_carte(tab->nb_cartes);
 			}
 		}
 

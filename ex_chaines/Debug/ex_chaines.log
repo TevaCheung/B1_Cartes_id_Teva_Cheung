@@ -2,5 +2,4 @@
   Génération de code en cours...
   Ignoré... (aucune modification pertinente détectée)
   carte_id.cpp
-main.obj : error LNK2001: symbole externe non rÚsolu "public: static int carte_id::nb_cartes" (?nb_cartes@carte_id@@2HA)
-C:\Users\Teva\Documents\Visual Studio 2017\Projets\ex_chaines\Debug\ex_chaines.exe : fatal error LNK1120: 1 externes non rÚsolus
+  ex_chaines.vcxproj -> C:\Users\Teva\Documents\Visual Studio 2017\Projets\ex_chaines_reference\Debug\ex_chaines.exe

@@ -12,7 +12,7 @@ carte_id::carte_id()
 	cp = 99999;
 	ville="Ville";
 }
-
+/*
 carte_id::carte_id(int id, char * prenom, char * nom, char * adresse, int cp, char * ville)
 {
 	//retirer_carte(this->nb_cartes);
@@ -22,7 +22,7 @@ carte_id::carte_id(int id, char * prenom, char * nom, char * adresse, int cp, ch
 	set_adresse(adresse);
 	set_cp(cp);
 	set_ville(ville);
-}
+}*/
 
 carte_id::~carte_id()
 {
@@ -78,19 +78,40 @@ void carte_id::set_id(int id)
 	//}while( id < 0);
 }
 
-void carte_id::set_prenom(char * prenom)
+void carte_id::set_prenom(char &prenom)
 {
-	this->prenom = prenom;
+	int i;
+	char *p = &prenom;
+
+	for (i = 0; i < 100; i++) {
+		prenom = p[i];
+	}
+
+	delete(p);
 }
 
-void carte_id::set_nom(char * nom)
+void carte_id::set_nom(char &nom)
 {
-	this->nom = nom;
+	int i;
+	char *p = &nom;
+
+	for (i = 0; i < 100; i++) {
+		nom = p[i];
+	}
+
+	delete(p);
 }
 
-void carte_id::set_adresse(char * adresse)
+void carte_id::set_adresse(char &adresse)
 {
-	this->adresse = adresse;
+	int i;
+	char *p = &adresse;
+
+	for (i = 0; i < 100; i++) {
+		adresse = p[i];
+	}
+
+	delete(p);
 }
 
 void carte_id::set_cp(int cp)
@@ -98,9 +119,16 @@ void carte_id::set_cp(int cp)
 	this->cp = cp;
 }
 
-void carte_id::set_ville(char * ville)
+void carte_id::set_ville(char &ville)
 {
-	this->ville = ville;
+	int i;
+	char *p = &ville;
+
+	for (i = 0; i < 100; i++) {
+		ville = p[i];
+	}
+
+	delete(p);
 }
 
 void carte_id::afficher()
@@ -114,15 +142,4 @@ void carte_id::afficher()
 	std::cout << std::endl;
 }
 
-void carte_id::ajouter(carte_id * carte)
-{
-	carte = new carte_id();
-
-}
-
-void carte_id::modifier()
-{
-
-
-}
 
